@@ -16,7 +16,7 @@ env:
     - CODE_COVERAGE_DIR=$SHIPPABLE_REPO_DIR/shippable/codecoverage
     - TESTS_LOC_DIR=$SHIPPABLE_REPO_DIR/tests
     - MOD_LOC=$SHIPPABLE_REPO_DIR/node_modules/.bin/
-    - ECR_REPO=929532707130.dkr.ecr.us-east-2.amazonaws.com/deploy-ecs-basic
+    - ECR_REPO=929532707130.dkr.ecr.us-east-1.amazonaws.com/deploy-ecs-basic
 
 build:
 
@@ -53,8 +53,7 @@ resources:
     type: image
     integration: dr-aws-keys
     pointer:
-      sourceName: "929532707130.dkr.ecr.us-east-2.amazonaws.com/deploy-ecs-basic"
-      region: "us-east-2"
+      sourceName: "929532707130.dkr.ecr.us-east-1.amazonaws.com/deploy-ecs-basic"
     seed:
       versionName: "latest"
 
@@ -84,7 +83,7 @@ resources:
     integration: dr-aws-keys
     pointer:
       sourceName : "deploy-ecs-basic" #name of the cluster to which we are deploying
-      region: "us-east-2"
+      region: "us-east-1"
 
 
 jobs:
